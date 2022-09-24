@@ -1,8 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-console.log(galleryItems);
-
 const gallary = document.querySelector(".gallery");
 
 const markup = galleryItems.reduce(
@@ -45,6 +43,7 @@ function onClickImage(evt) {
   document.addEventListener("keydown", (evt) => {
     if (evt.key === "Escape") {
       instance.close();
+      document.removeEventListener("keydown", (evt) => evt.key === "Escape");
     }
   });
 }
